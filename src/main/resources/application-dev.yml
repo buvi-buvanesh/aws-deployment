@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: aws-deployment
+  datasource :
+    url: jdbc:mysql://localhost:3007/aws-rds?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name : com.mysql.cj.jdbc.Driver
+
+server :
+  port : 8097
