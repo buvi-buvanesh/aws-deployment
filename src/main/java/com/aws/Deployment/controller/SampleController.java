@@ -27,4 +27,14 @@ public class SampleController {
     public ResponseEntity<List<Sample>> getAllUser(){
         return ResponseEntity.ok(sampleRepository.findAll());
     }
+
+    @GetMapping("findby/{id}")
+    public ResponseEntity<Sample> getspecificUser(@PathVariable Long id){
+        return ResponseEntity.ok(sampleRepository.findById(id).get());
+    }
+    
+    @GetMapping("/feature")
+    public ResponseEntity<String> getFeature(){
+        return ResponseEntity.ok("featured Branch");
+    }
 }
