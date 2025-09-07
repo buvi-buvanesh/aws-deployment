@@ -2,7 +2,7 @@ spring:
   application:
     name: aws-deployment
   datasource:
-    url: jdbc:mysql://database-1.cbomkky48odn.eu-north-1.rds.amazonaws.com:3306/aws_rds?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://database-1.cbomkky48odn.eu-north-1.rds.amazonaws.com:3306/myprodDb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
     username: admin
     password: ${secrets.DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
