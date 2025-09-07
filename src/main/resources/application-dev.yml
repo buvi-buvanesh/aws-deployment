@@ -1,15 +1,17 @@
 spring:
   application:
     name: aws-deployment
-  datasource :
-    url: jdbc:mysql://localhost:3007/aws-rds?createDatabaseIfNotExist=true
+  datasource:
+    url: jdbc:mysql://localhost:3007/aws-rds?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: root
-    driver-class-name : com.mysql.cj.jdbc.Driver
-  jpa :
-    hibernate :
-      dialect: org.hibernate.dialect.MySQL8Dialect
-      ddl-auto : update
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
 
-server :
-  port : 8097
+server:
+  port: 8097
