@@ -5,7 +5,9 @@ import com.aws.Deployment.repository.SampleRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
@@ -29,9 +31,12 @@ public class SampleController {
     }
 
     @GetMapping("findby/{id}")
-    public ResponseEntity<Sample> getspecificUser(@PathVariable Long id){
-        return ResponseEntity.ok(sampleRepository.findById(id).get());
+    public ResponseEntity<Sample> getSpecificUser(@PathVariable Long id) {
+        return sampleRepository.findById(id)
+                .map(ResponseEntity::ok)                     // If found → 200 OK + body
+                .orElseGet(() -> ResponseEntity.notFound().build()); // If not found → 404
     }
+
 
     @GetMapping("/feature")
     public ResponseEntity<String> getFeature(){
