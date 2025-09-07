@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 		<jacoco.version>0.8.11</jacoco.version>
 		<sonar.projectKey>buvi-buvanesh_aws-deployment</sonar.projectKey>
 		<sonar.organization>buvi-buvanesh</sonar.organization>
